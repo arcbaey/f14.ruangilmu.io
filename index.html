@@ -1,10 +1,126 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>RuangIlmu-ProjectF14</title>
+    <title>Ruang Ilmu</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Project Tugas Kelompok F14 -  Program CEB CfDS x Progate Indonesia">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Alex Kurniawan, Arya Satya, Devi Rukmana Bidari, Syihab Muchsin, Taufiq Hidayat">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+          rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script>
+      var x,
+          i,
+          j,
+          l,
+          ll,
+          selElmnt,
+          a,
+          b,
+          c;
+      /*look for any elements with the class "custom-select":*/
+      x = document.getElementsByClassName("custom-select");
+      l = x.length;
+   
+      for (i = 0; i < l; i++) {
+         selElmnt = x[i].getElementsByTagName("select")[0];
+         ll = selElmnt.length;
+         /*for each element, create a new DIV that will act as the selected item:*/
+         a = document.createElement("DIV");
+         a.setAttribute("class", "select-selected");
+         a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+         x[i].appendChild(a);
+         /*for each element, create a new DIV that will contain the option list:*/
+         b = document.createElement("DIV");
+         b.setAttribute("class", "select-items select-hide");
+   
+         for (j = 1; j < ll; j++) {
+             /*for each option in the original select element,
+                 create a new DIV that will act as an option item:*/
+             c = document.createElement("DIV");
+             c.innerHTML = selElmnt.options[j].innerHTML;
+   
+             c.addEventListener("click", function (e) {
+                     /*when an item is clicked, update the original select box,
+                     and the selected item:*/
+                     var y, i, k, s, h, sl, yl;
+                     s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                     sl = s.length;
+                     h = this.parentNode.previousSibling;
+   
+                     for (i = 0; i < sl; i++) {
+                         if (s.options[i].innerHTML == this.innerHTML) {
+                             s.selectedIndex = i;
+                             h.innerHTML = this.innerHTML;
+                             y = this.parentNode.getElementsByClassName("same-as-selected");
+                             yl = y.length;
+   
+                             for (k = 0; k < yl; k++) {
+                                 y[k].removeAttribute("class");
+                             }
+   
+                             this.setAttribute("class", "same-as-selected");
+                             break;
+                         }
+                     }
+   
+                     h.click();
+                 }
+   
+             );
+             b.appendChild(c);
+         }
+   
+         x[i].appendChild(b);
+   
+         a.addEventListener("click", function (e) {
+                 /*when the select box is clicked, close any other select boxes,
+                 and open/close the current select box:*/
+                 e.stopPropagation();
+                 closeAllSelect(this);
+                 this.nextSibling.classList.toggle("select-hide");
+                 this.classList.toggle("select-arrow-active");
+             }
+   
+         );
+     }
+   
+     function closeAllSelect(elmnt) {
+         /*a function that will close all select boxes in the document,
+             except the current select box:*/
+         var x,
+             y,
+             i,
+             xl,
+             yl,
+             arrNo = [];
+         x = document.getElementsByClassName("select-items");
+         y = document.getElementsByClassName("select-selected");
+         xl = x.length;
+         yl = y.length;
+   
+         for (i = 0; i < yl; i++) {
+             if (elmnt == y[i]) {
+                 arrNo.push(i)
+             } else {
+                 y[i].classList.remove("select-arrow-active");
+             }
+         }
+   
+         for (i = 0; i < xl; i++) {
+             if (arrNo.indexOf(i)) {
+                 x[i].classList.add("select-hide");
+             }
+         }
+     }
+   
+     /*if the user clicks anywhere outside the select box,
+         then close all select boxes:*/
+     document.addEventListener("click", closeAllSelect);
+  </script>
   </head>
   <body>
     <!-- Write your code below -->
@@ -27,9 +143,175 @@
         </div>
       </header>
 
+    <!--Arya - Jumbotron-->
+    <div class="kotak-paket">
+      <h1>Pilih Paketmu di Sini !</h1>
+      <p class="tersedia">Tersedia untuk SD,
+          SMP,
+          SMA</p>
+      <p class="durasi">Durasi Paket Langganan</p>
+      <p>
+          <div class="custom-select"><select name="namatabel">
+                  <option value="">Pilih</option>
+                  <option value="sma-ipa-ips">SMA IPA IPS</option>
+                  <option value="2-tahun">2 Tahun</option>
+                  <option value="1-tahun">1 Tahun</option>
+              </select></div>
+      </p>
+      <div class="con-harga-paket">
+        <div class="kotak-harga-paket">
+          <p><a class="harga">Harga Paket</a><p>
+          <p><a class="dua">Rp2.200.000</a>
+          <p><a class="lapan">Rp880.000</a>
+          <p><a class="kode">Dengan Kode Diskon: JADIJUARA</a>
+          </p>
+        </div>
+
+        <p>
+        <input class="tombol" type="submit" value="Langganan Sekarang">
+      </div>
+    </div>   
+    
+    <!--Syihab Muchsin - Statistics & Pricing Table-->
+    <div class="main-stat">
+      <div class="stat-title">
+          <h1>Kenapa Harus Memilih ruangilmu?</h1>
+      </div>
+
+      <div class="box-container">
+          <div class="box">
+              <p class="persentase"><strong>93%</strong>
+              <p class="deskipsi"><strong>Tingkat kepuasan</strong> pengguna bimbel online ruangilmu</p>
+              <img class="visual" src="assets/images/satisfy.svg" alt="a">
+          </div>
+          <div class="box">
+              <p class="persentase"><strong>96%</strong>
+              <p class="deskipsi">Menilai ruangilmu<strong> lebih menarik</strong> dibandingkan pengajaran di sekolah</p>
+              <img class="visual" src="assets/images/menarik.svg" alt="a">
+          </div>
+          <div class="box">
+              <p class="persentase"><strong>98%</strong>
+              <p class="deskipsi">Menilai ruangilmu<strong> sangat membantu pemahaman konsep</strong></p>
+              <img class="visual" src="assets/images/paham.svg" alt="a">
+          </div>
+          <div class="box">
+              <p class="persentase"><strong>98%</strong>
+              <p class="deskipsi"> Menilai ruanglimu<strong> sangat membantu persiapan ujian</strong></p>
+              <img class="visual" src="assets/images/ujian.svg" alt="a">
+          </div>
+      </div>
+    </div>
+    <div class="main-table">
+      <div class="table-title">
+          <h1>Bimbel Jadul VS ruangilmu?</h1>
+      </div>
+      <div class="table-container">
+          <table class="bimbel-jadul">
+              <colgroup>
+                  <col span="1" style="background-color:#353b48">
+                  <col style="background-color:#f5f6fa">
+              </colgroup>
+              <tr>
+                  <th rowspan="2" class="feature col-header">Harga</th>
+                  <th class="feature-desc">Bimbel Jadul</th>
+
+              </tr>
+              <tr>
+                  <td>Rata-rata > Rp10.000.000 / tahun</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Personalisasi Pembelajaran</td>
+                  <td class="feature-desc">Materi belajar sama untuk tiap murid di kelas</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Jadwal Belajar</td>
+                  <td class="feature-desc">Sudah ditentukan dan terbatas waktunya</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Tempat Belajar</td>
+                  <td class="feature-desc">Harus datang ke tempat bimbel</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Peserta</td>
+                  <td class="feature-desc">Total s.d. 40 orang/kelas, sulit berkonsentrasi</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Materi Belajar</td>
+                  <td class="feature-desc">Diajarkan sekali menyesuaikan jadwal</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Metode Belajar</td>
+                  <td class="feature-desc">Membosankan dan kualitas guru biasanya tidak seragam</td>
+
+              </tr>
+              <tr>
+                  <td class="feature">Latihan Soal</td>
+                  <td class="feature-desc">Buku latihan soal yang perlu dibawa setiap bimbel</td>
+
+              </tr>
+          </table>
+          <table class="ruangilmu">
+              <colgroup>
+                  <col span="1" style="background-color:#273c75">
+              </colgroup>
+              <tr>
+                  <th class=" ri-desc
+                  ">Ruangilmu
+                  </th>
+
+              </tr>
+              <tr>
+                  <td class="ri-desc">Harga hanya Rp1.000-an/hari. Hemat sampai 10x lipat!</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Materi belajar sama untuk tiap murid di kelas</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Sudah ditentukan dan terbatas waktunya</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Harus datang ke tempat bimbel</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Total s.d. 40 orang/kelas, sulit berkonsentrasi</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Diajarkan sekali menyesuaikan jadwal</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Membosankan dan kualitas guru biasanya tidak seragam</td>
+
+              </tr>
+              <tr>
+
+                  <td class="ri-desc">Buku latihan soal yang perlu dibawa setiap bimbel</td>
+
+              </tr>
+          </table>
+      </div>
+    </div>
 
 
 
+    <!-- Main Product & Bottom Navigation-->
     <div class="product-wrapper">
       <div class="product-container">
         <div class="heading-product">
@@ -39,7 +321,7 @@
           <div class="product-block">
             <div class="product">
               <div class="product-icon">
-                <img class="img-product" src="ruangbelajarplus.webp">
+                <img class="img-product" src="assets/images/ruangbelajarplus.webp">
               </div>
               <p class="txt-product">Grup belajar interaktif dengan live streaming, tutor standby, dan berbagai fitur menarik lainnya</p>
               <div class="txt-product-link">
@@ -50,7 +332,7 @@
           <div class="product-block blockdua">
             <div class="product">
               <div class="product-icon">
-                <img src="ruangles.svg">
+                <img src="assets/images/ruangles.svg">
               </div>
               <p class="txt-product">Belajar privat dengan guru terbaik pilihan Ruangguru</p>
               <div class="txt-product-link">
@@ -61,7 +343,7 @@
           <div class="product-block blocktiga">
             <div class="product">
               <div class="product-icon">
-                <img class="img-product" src="brain-academy.webp">
+                <img class="img-product" src="assets/images/brain-academy.webp">
               </div>
               <p class="txt-product">Bimbel yang beda, dengan adanya kombinasi bimbel offline & online dengan guru terbaik</p>
               <div class="txt-product-link">
@@ -72,7 +354,7 @@
           <div class="product-block blocksatu">
             <div class="product">
               <div class="product-icon">
-                <img src="ruanglesonline.svg">
+                <img src="assets/images/ruanglesonline.svg">
               </div>
               <p class="txt-product">Konsultasikan soal tersulit kamu sebanyak-banyaknya dengan tutor online terbaik</p>
               <div class="txt-product-link">
@@ -117,13 +399,13 @@
         </div>
         <div class="bottomnav phone">
           <p>DOWNLOAD GRATIS APLIKASI RUANGILMU</p>
-          <img class="imgphone" src="ezgif.jpg">
+          <img class="imgphone" src="assets/images/ezgif.jpg">
         </div>
         <div class="bottomnav play">
-          <a href="#"><img class="play-btn" src="googleplay-icon.svg"></a>
+          <a href="#"><img class="play-btn" src="assets/images/googleplay-icon.svg"></a>
           <br>
           <br>
-          <a href="#"><img class="play-btn" src="appstore-icon.svg"></a>
+          <a href="#"><img class="play-btn" src="assets/images/appstore-icon.svg"></a>
         </div>
       </div>
     </div>
@@ -140,11 +422,11 @@
                     <a style="color: white !important; text-decoration: none;" href="https://ruangguru.com/other/terms-conditions/student?utm_source=bimbelrg&amp;utm_medium=referral&amp;utm_campaign=footer">Syarat &amp; Ketentuan</a>
                   </td>
                   <td>
-                    <a href="https://www.instagram.com/"><img src="img/instagram-btn.svg"></a>
-                    <a href="https://www.facebook.com/"><img src="img/facebook-btn.svg"></a>
-                    <a href="https://www.youtube.com/"><img src="img/youtube-btn.svg"></a>
-                    <a href="https://twitter.com/ruangguru/"><img src="img/twitter-btn.svg"></a>
-                    <a href="https://www.linkedin.com/"><img src="img/ic-linked-in.svg"></a>
+                    <a href="https://www.instagram.com/"><img src="assets/images/instagram-btn.svg"></a>
+                    <a href="https://www.facebook.com/"><img src="assets/images/facebook-btn.svg"></a>
+                    <a href="https://www.youtube.com/"><img src="assets/images/youtube-btn.svg"></a>
+                    <a href="https://twitter.com/ruangguru/"><img src="assets/images/twitter-btn.svg"></a>
+                    <a href="https://www.linkedin.com/"><img src="assets/images/ic-linked-in.svg"></a>
                   </td>
                 </td>  
               </tr>
