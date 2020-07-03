@@ -9,8 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
           rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      
     <link href="assets/styles/style.css" rel="stylesheet">
-    
     <script>
       var x,
           i,
@@ -121,6 +126,17 @@
          then close all select boxes:*/
      document.addEventListener("click", closeAllSelect);
   </script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+  
+            $('.items').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3
+            });
+          });
+        </script>
+  
   </head>
   <body>
     <!-- Write your code below -->
@@ -309,7 +325,18 @@
       </div>
     </div>
 
-
+    <!-- xxx -->
+    <div class="biru" style="background-color: #eaf3ff">  
+      <div class="items">
+        <div  align="center"><img src="assets/images/oki.png"><br><b>Oki <br>Guru Sosiologi </b></div>
+        <div  align="center"><img src="assets/images/jovan.png"><br><b>jovan <br> Guru Ekonomi </b></div>
+        <div  align="center"><img src="assets/images/yunina.png"><br><b>yunina <br> Guru Matematika  </b></div>
+        <div  align="center"><img src="assets/images/lis.png"><br><b>lis <br> Guru Biologi </b></div>
+        <div align="center"><img src="assets/images/rodika.png"><br><b>rodika <br> Guru Fisika  </b></div>
+        <div align="center"><img src="assets/images/fikrie.png"><br><b>fikri <br>Guru Bahasa Inggris  </b></div>
+      </div>
+    </div>
+      
 
     <!-- Main Product & Bottom Navigation-->
     <div class="product-wrapper">
