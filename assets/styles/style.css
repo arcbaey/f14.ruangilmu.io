@@ -56,6 +56,324 @@ header {
   color: #4AC8E7;
 }
 
+/* Jumbotron */
+/*body {
+  font-family: sans-serif;
+  background: #d5f0f3;
+}
+*/
+.kotak-paket h1 {
+  text-align: left;
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+p.tersedia {
+  padding-left: 30px;
+  font-size: 13px;
+  color: #696969;
+}
+
+p.durasi {
+  padding-left: 30px;
+  font-size: 20px;
+  color: black;
+}
+
+.kotak-paket {
+  font-family: sans-serif;
+  background: #d5f0f3;
+  width: 550px;
+  border-radius: 25px;
+  background: white;
+  /*meletakkan form ke tengah*/
+  margin: 80px auto;
+  padding: 30px 20px;
+}
+
+.con-harga-paket {
+  padding-left: 30px;
+}
+
+.kotak-harga-paket {
+  padding-left: 30px;
+  border: 1px solid #DCDCDC;
+  border-radius: 8px;
+  width: 450px;
+}
+
+a.harga {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+a.dua {
+  text-decoration: line-through;
+}
+
+a.lapan {
+  font-weight: bold;
+  color: red;
+  font-size: 21px;
+}
+
+a.kode {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tombol {
+  background-image: linear-gradient(#FFCE48, #F89A22);
+  color: white;
+  font-size: 11pt;
+  font-weight: bold;
+  width: 500px;
+  border: none;
+  border-radius: 25px;
+  padding: 18px 5px;
+}
+
+
+/* The container must be positioned relative: */
+.custom-select {
+  padding-left: 30px;
+  position: relative;
+  font-family: Arial;
+  width: 450px;
+}
+
+.custom-select select {
+  display: none;
+  /*hide original SELECT element: */
+}
+
+.select-selected {
+  border-radius: 25px;
+  background-color: #DCDCDC;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #000 transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #000 transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: #000000;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  padding-left: 30px;
+  background-color: #DCDCDC;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Statistic & Pricing Table */
+* {
+  box-sizing: border-box;
+}
+.main-stat {
+  min-width: 230px;
+  background-color: #273c75;
+  padding-bottom: 20px;
+
+}
+.main-table {
+  min-width: 230px;
+  background-image: url("statistics3.svg");
+  background-size: cover;
+  padding-bottom: 20px;
+
+
+}
+.stat-title {
+  color: #f5f6fa;
+  font-family: rubik,sans-serif;
+  font-size: small;
+  padding:15px;
+  text-align:center;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  border-bottom: 2px solid #ffa502;
+
+}
+.table-title {
+  color: #353b48;
+  font-family: rubik, sans-serif;
+  font-size: small;
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  border-bottom: 2px solid #192a56;
+}
+.box-container {
+  overflow:auto;
+  max-width: 1440px;
+  margin: auto;
+  padding: 10px;
+
+}
+.box {
+  background-color:#f5f6fa ;
+  display: flex;
+  float:left;
+  width:24%;
+  margin-top: 10px ;
+  margin-right: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 7px #353b48;
+}
+.box:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+.box p {
+  max-width:50%;
+  float: left;
+  vertical-align: middle;
+  font-size: 16px;
+  color:#192a56;
+  font-family: "Source Sans Pro", sans-serif;
+  display:inline-block;
+  padding: 10px;
+  margin:auto;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  font-weight: normal;
+
+}
+.box .persentase{
+  width:25%;
+  font-size: larger;
+  text-align: center;
+  color:#ffa502;
+  float: left;
+  margin:auto;
+  padding: 5px;
+
+}
+.box img {
+  width:25%;
+  text-align: center;
+  color:black;
+  float: left;
+  margin:auto;
+  padding: 5px;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .box{
+      width:100%;
+  }
+  table {
+      width:100%
+  }
+}
+
+
+table {
+  font-family: "Source Sans Pro", sans-serif;
+  border-collapse: collapse;
+  float: left;
+  max-width: 70%;
+  display: inline-block;
+
+}
+
+td, th {
+  border-bottom: 1px solid darkgray;
+  text-align: center;
+  padding: 8px;
+}
+
+.ruangilmu th {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 10px;
+  background-color: #dcdde1;
+  color: #273c75;
+  font-size: larger;
+
+}
+
+table.ruangilmu {
+  cursor: pointer;
+  transition: transform .2s; /* Animation */
+}
+
+table.ruangilmu:hover {
+  position: absolute;
+  z-index: 100;
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.col-header {
+  border-top-left-radius: 20px;
+
+}
+th.feature-desc {
+  font-size: 20px;
+  color: #353b48;
+  background-color: darkgray;
+}
+.feature {
+  color:#e5e5e5;
+}
+.feature-desc {
+  color:#353b48;
+}
+.ri-desc {
+  color:#e5e5e5;
+}
+
+.table-container {
+  overflow: hidden;
+  margin: auto;
+  max-width: 1000px;
+}
 
 /* Main-Product */
 .heading-product {
