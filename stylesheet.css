@@ -18,14 +18,46 @@ a {
   text-decoration: none;
 }
 
-/* Write your code below */
+/* Header */
+header {
+  background-color: #FFFFFF;
+  color: #515151;
+  height: 90px;
+  margin-top: -16px;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+}
+
+.header-logo {
+  float: left;
+  font-size: 36px;
+  padding : 20px 10px;
+}
+.header-button{
+	float: right;
+	padding: 33px;
+}
+.container{
+  margin: auto;
+  width: 90%;
+}
+
+.header-list li {
+  list-style: none;
+  float: left;
+  padding: 33px 20px;
+}
+
+.header-list li:hover {
+  list-style: none;
+  float: left;
+  padding: 33px 20px;
+  color: #4AC8E7;
+}
 
 
-
-
-
-
-
+/* Main-Product */
 .heading-product {
   padding-top: 40px;
   padding-bottom: 30px;
@@ -117,13 +149,8 @@ a {
 .txt-product-link:hover {
   color: black
 }
-.btn:active {
-  box-shadow: none;
-  position: relative;
-  top: 7px;
-}
 
-
+/* Nav - Bottom */
 .bottomnav-wrapper {
   font-family: "Open sans",sans-serif;
   background-color: #1d2230;
@@ -186,4 +213,18 @@ a {
 .imgphone {
   width: 100%;
   max-width: 250px;
+}
+
+/* Footer */
+footer {
+  background-color: #1A1E2B;
+  height: 200 px;
+  display: flex;
+  color: white;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+table{
+  margin-top: 60px; 
 }
