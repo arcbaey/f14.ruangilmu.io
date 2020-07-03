@@ -1,0 +1,189 @@
+/* Reset CSS (DO NOT DELETE) */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lucida Grande";
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Write your code below */
+
+
+
+
+
+
+
+.heading-product {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-right: 30%;
+  color: black;
+}
+
+.heading-product h2 {
+  font-weight: bold;
+  font-family: 'Segoe UI';
+}
+
+.product-wrapper {
+  height: 800px;
+  padding: 0px 80px 20px 20px;
+  background-image: url(main_product.png);
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 828px) {
+  .product-container {
+  flex-direction: column;
+  }
+  .product-wrapper {
+    height: 1300px;
+  }
+}
+
+.product-block {
+  display: block;
+  width: 350px;
+  height: 270px;
+  border: 1px solid white;
+  background-color: #ffbe76;
+  border-radius: 20px;
+  margin: 10px 25px;
+  float: left;
+  opacity: 0.9;
+}
+
+.blocksatu {
+  background-color: #7ed6df;
+}
+
+.blockdua {
+  background-color: #55E6C1;
+}
+
+.blocktiga {
+  background-color: #f6e58d;
+}
+
+.product {
+  text-align: center;
+  position: relative;
+}
+
+.product-icon {
+  padding-top: 10px;
+}
+
+.img-product {
+  max-width: 35%;
+  height: auto;
+}
+
+.txt-product {
+  padding-top: 20px;
+  width: 80%;
+  display: inline-block;
+  font-size: 15px;
+  color: black;
+  font-family: 'Source Sans Pro',sans-serif;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.txt-product-link {
+  font-weight: bold;
+  color: cyan;
+  position: absolute;
+  top: 220px;
+  width: 100%;
+}
+
+.txt-product-link:hover {
+  color: black
+}
+.btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 7px;
+}
+
+
+.bottomnav-wrapper {
+  font-family: "Open sans",sans-serif;
+  background-color: #1d2230;
+  padding: 5% 50px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+
+.flex-footer {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+
+.bottomnav {
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+.menu {
+  padding-right: 80px;
+  text-align: left;
+}
+
+.play {
+  margin-left: -50px;
+  padding-top: 50px;
+}
+
+.play-btn {
+  opacity: 0.8;
+}
+
+.play-btn:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+.flex-footer{
+  flex-direction: column;
+}
+}
+
+.bottomnav-wrapper p {
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  padding-bottom: 25px;
+}
+
+.bottomnav-wrapper li {
+  padding: 5px 0px;
+  color: #bec8d0;
+}
+
+.bottomnav-wrapper a {
+  color: white;
+}
+
+.imgphone {
+  width: 100%;
+  max-width: 250px;
+}
